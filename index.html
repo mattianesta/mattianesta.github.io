@@ -18,6 +18,10 @@
   --text: #999999;
   --text-bright: #e8e8e8;
   --text-dim: #555555;
+  --primary: #ff2d55;
+  --primary-dim: #ff2d5514;
+  --primary-border: #ff2d5526;
+  --primary-glow: #ff2d550F;
   --accent: #77ff00;
   --accent-dim: rgba(119,255,0,0.08);
   --accent-border: rgba(119,255,0,0.15);
@@ -49,8 +53,8 @@ body::after {
   position: fixed;
   inset: 0;
   opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  pointer-events: none;
+  /*background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  */pointer-events: none;
   z-index: 9999;
 }
 
@@ -138,7 +142,7 @@ nav {
 .nav-toggle span { display: block; width: 16px; height: 1.5px; background: var(--text-bright); margin: 3px 0; }
 
 .container { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
-section { position: relative; padding: 5.5rem 0; }
+section { position: relative; padding: 4.5rem 0; }
 
 .section-tag {
   font-family: var(--font-mono);
@@ -298,7 +302,7 @@ section { position: relative; padding: 5.5rem 0; }
 
 .hero-card-header .dots { display: flex; gap: 4px; }
 .hero-card-header .dots span { width: 7px; height: 7px; border-radius: 50%; border: 1px solid var(--border); }
-.hero-card-header .dots span:first-child { background: var(--red); border-color: var(--red); }
+.hero-card-header .dots span { background: var(--accent); border-color: var(--accent-border); }
 
 .hero-card-body { padding: 1rem 1.1rem; }
 
@@ -501,6 +505,17 @@ section { position: relative; padding: 5.5rem 0; }
   background: var(--accent-dim);
 }
 
+.proj-tag-lang {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  padding: 0.22rem 0.5rem;
+  border: 1px solid var(--primary-border);
+  background: var(--primary-dim);
+}
+
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.2rem; align-items: start; }
 
 .contact-text p { font-size: 1.02rem; color: var(--text); line-height: 1.75; margin-bottom: 1rem; }
@@ -617,19 +632,19 @@ footer .acc { color: var(--accent); }
   <div class="container">
     <div class="hero-layout">
       <div>
-        <div class="hero-prefix"><span class="dot"></span>Transmission // stable</div>
+        <div class="hero-prefix"><span class="dot"></span>Computer Science // EPFL</div>
         <h1 class="hero-name">Mattia<br><span class="last">Nesta.</span></h1>
         <div class="hero-meta">
           <span>Lausanne, Switzerland</span>
           <span class="sep">//</span>
-          <a href="https://github.com/" target="_blank">Github</a>
+          <a href="https://github.com/nestama4real" target="_blank">Github</a>
           <span class="sep">//</span>
-          <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+          <a href="https://linkedin.com/in/mattia-nesta" target="_blank">LinkedIn</a>
           <span class="sep">//</span>
           <a href="mailto:mattia.nesta@epfl.ch">mattia.nesta@epfl.ch</a>
         </div>
         <p class="hero-bio">
-          Second-year <strong>Computer Science</strong> student at <strong>EPFL</strong>, passionate about mathematics and computing. Interested in <strong>compilers</strong>, <strong>algorithm design</strong>, and <strong>theoretical foundations</strong>. Eager to apply technical skills to real-world challenges.
+          Second-year <strong>Computer Science</strong> student at <strong>EPFL</strong>, with a strong interest in <strong>mathematics</strong>, <strong>physics</strong>, and computing. Interested in <strong>data</strong> and <strong>machine learning</strong>, and motivated to build practical applications and apply technical skills to real-world problems.
         </p>
         <div class="hero-terminal"><span>$ whoami</span> → mattia.nesta // cs_epfl <span class="cursor">▊</span></div>
         <div class="hero-actions">
@@ -645,7 +660,7 @@ footer .acc { color: var(--accent); }
         <div class="hero-card-body">
           <div class="stat-row"><span class="stat-label">Formation</span><span class="stat-value">BSc CS — EPFL</span></div>
           <div class="stat-row"><span class="stat-label">GPA</span><span class="stat-value accent">5.24 / 6</span></div>
-          <div class="stat-row"><span class="stat-label">Focus</span><span class="stat-value">Compilers & Theory</span></div>
+          <div class="stat-row"><span class="stat-label">Focus</span><span class="stat-value">Data & Statistics</span></div>
           <div class="stat-row"><span class="stat-label">Langues</span><span class="stat-value">FR / EN / IT</span></div>
           <div class="stat-row"><span class="stat-label">Status</span><span class="stat-value accent">● Open</span></div>
         </div>
@@ -654,11 +669,13 @@ footer .acc { color: var(--accent); }
   </div>
 </section>
 
+<div class="divider"></div>
+
 <section id="skills">
   <div class="container">
     <div class="section-tag">Stack</div>
-    <h2 class="section-heading">Skills &<br>Technologies</h2>
-    <div class="section-sub" style="margin-bottom: 2.2rem;">Compétences techniques acquises à l'EPFL et en projets personnels.</div>
+    <h2 class="section-heading">Skills & <br>Technical Stack </h2>
+    <div class="section-sub" style="margin-bottom: 2.2rem;">Technical skills acquired at EPFL and through personal projects.</div>
     <div class="skills-marquee">
       <div class="skills-marquee-inner">
         <span>Java<span class="dot">·</span>Scala<span class="dot">·</span>RISC-V<span class="dot">·</span>Python<span class="dot">·</span>C<span class="dot">·</span>JavaScript<span class="dot">·</span>LaTeX<span class="dot">·</span>Linux<span class="dot">·</span>Git<span class="dot">·</span>PyTorch<span class="dot">·</span>JavaFX<span class="dot">·</span>Pandas<span class="dot">·</span>NumPy</span>
@@ -667,9 +684,9 @@ footer .acc { color: var(--accent); }
     </div>
     <div class="skills-grid fade-in">
       <div class="skill-block">
-        <div class="skill-block-label">Languages</div>
+        <div class="skill-block-label">Programming Languages</div>
         <div class="skill-list">
-          <span class="skill-item">Java</span><span class="skill-item">Scala</span><span class="skill-item">RISC-V</span><span class="skill-item">Python</span><span class="skill-item">C</span><span class="skill-item">JavaScript</span><span class="skill-item">LaTeX</span>
+          <span class="skill-item">Java</span><span class="skill-item">Scala</span><span class="skill-item">RISC-V</span><span class="skill-item">Python</span><span class="skill-item">C</span><span class="skill-item">JavaScript</span>
         </div>
       </div>
       <div class="skill-block">
@@ -685,10 +702,10 @@ footer .acc { color: var(--accent); }
         </div>
       </div>
     </div>
-    <div style="margin-top: 1px; border: 1px solid var(--border); background: var(--bg-card); padding: 1.8rem;" class="fade-in">
-      <div class="skill-block-label">Langues</div>
+    <div style="border: 1px solid var(--border); background: var(--bg-card); padding: 1.8rem;" class="fade-in">
+      <div class="skill-block-label">Spoken Languages</div>
       <div class="skill-list">
-        <span class="skill-item">Français — Natif</span><span class="skill-item">English — C1</span><span class="skill-item">Italiano — B2</span>
+        <span class="skill-item">French - Native</span><span class="skill-item">English — C1</span><span class="skill-item">Italian — B2</span>
       </div>
     </div>
   </div>
@@ -700,8 +717,8 @@ footer .acc { color: var(--accent); }
   <div class="container">
     <div class="timeline-header">
       <div>
-        <div class="section-tag">Parcours</div>
-        <h2 class="section-heading">My Journey</h2>
+        <div class="section-tag">Journey</div>
+        <h2 class="section-heading">Education & <br>Experience</h2>
       </div>
       <div class="timeline-filters">
         <button class="t-filter active" onclick="filterTL('all',this)">All</button>
@@ -758,33 +775,62 @@ footer .acc { color: var(--accent); }
 
 <section id="projects">
   <div class="container">
-    <div class="section-tag">Réalisations</div>
+    <div class="section-tag">Builds</div>
     <h2 class="section-heading">Projects</h2>
-    <div class="section-sub" style="margin-bottom: 2.2rem;">Projets académiques et personnels en informatique.</div>
+    <div class="section-sub" style="margin-bottom: 2.2rem;">Academic and personal projects in computer science.</div>
     <div class="projects-grid fade-in">
       <div class="proj-card">
-        <div class="proj-top"><span class="proj-type">Academic</span><span class="proj-year">2024–2025</span></div>
-        <h3>Fireboy & Watergirl — 2D Game</h3>
-        <p>Developed a 2D platformer game in Java inspired by Fireboy and Watergirl, with physics, collision detection, and level design.</p>
-        <div class="proj-tags"><span class="proj-tag">Java</span><span class="proj-tag">Game Dev</span><span class="proj-tag">OOP</span></div>
+        <div class="proj-top">
+          <span class="proj-type">Academic</span>
+          <span class="proj-year">2025</span>
+        </div>
+        <h3>Scala WebApp — Dou Di Zhu</h3>
+        <p>Built a Scala WebApp implementing the Dou Di Zhu card game with game logic, state management, and user interaction as a team of four.</p>
+        <div class="proj-tags">
+          <span class="proj-tag-lang">Scala</span>
+          <span class="proj-tag">Web Dev</span>
+          <span class="proj-tag">Functional</span>
+        </div>
       </div>
       <div class="proj-card">
-        <div class="proj-top"><span class="proj-type">Academic</span><span class="proj-year">2024–2025</span></div>
+        <div class="proj-top">
+          <span class="proj-type">Academic</span>
+          <span class="proj-year">2025</span>
+        </div>
         <h3>CFF/SBB Mobile App — JavaFX</h3>
         <p>Built a JavaFX replica of the CFF/SBB app with a route-planning algorithm computing optimal journeys based on travel time and connections.</p>
-        <div class="proj-tags"><span class="proj-tag">Java</span><span class="proj-tag">JavaFX</span><span class="proj-tag">Algorithms</span></div>
+        <div class="proj-tags">
+          <span class="proj-tag-lang">Java</span>
+          <span class="proj-tag">JavaFX</span>
+          <span class="proj-tag">OOP</span>
+        </div>
+      </div>      
+      <div class="proj-card">
+        <div class="proj-top">
+          <span class="proj-type">Academic</span>
+          <span class="proj-year">2024</span>
+        </div>
+        <h3>Fireboy & Watergirl — 2D Game</h3>
+        <p>Developed a 2D platformer game in Java inspired by Fireboy and Watergirl, with physics, collision detection, and level design.</p>
+        <div class="proj-tags">
+          <span class="proj-tag-lang">Java</span>
+          <span class="proj-tag">Game Dev</span>
+          <span class="proj-tag">OOP</span>
+        </div>
       </div>
       <div class="proj-card">
-        <div class="proj-top"><span class="proj-type">Academic</span><span class="proj-year">2025</span></div>
-        <h3>Dou Di Zhu — Scala WebApp</h3>
-        <p>Built a Scala WebApp implementing the Dou Di Zhu card game with game logic, state management, and user interaction as a team of four.</p>
-        <div class="proj-tags"><span class="proj-tag">Scala</span><span class="proj-tag">Web Dev</span><span class="proj-tag">Functional</span></div>
-      </div>
-      <div class="proj-card">
-        <div class="proj-top"><span class="proj-type">Research</span><span class="proj-year">2022</span></div>
+        <div class="proj-top">
+          <span class="proj-type">Research</span>
+          <span class="proj-year">2022</span>
+        </div>
         <h3>Cryptographic Algorithm — LDDR</h3>
         <p>Designed a cryptographic algorithm based on complex modular arithmetic, combining mathematical theory with practical implementation.</p>
-        <div class="proj-tags"><span class="proj-tag">Cryptography</span><span class="proj-tag">Mathematics</span><span class="proj-tag">Algorithms</span></div>
+        <div class="proj-tags">
+          <span class="proj-tag-lang">Python</span>
+          <span class="proj-tag">Cryptography</span>
+          <span class="proj-tag">Algebra</span>
+          <span class="proj-tag">Algorithms</span>
+        </div>
       </div>
     </div>
   </div>
@@ -798,25 +844,23 @@ footer .acc { color: var(--accent); }
     <h2 class="section-heading">Contact</h2>
     <div class="contact-grid fade-in" style="margin-top: 1.8rem;">
       <div class="contact-text">
-        <p>Vous avez un projet, une question, ou une opportunité ? N'hésitez pas à me contacter — je suis toujours ouvert aux nouvelles connexions.</p>
+        <p>If you have a project, a question, or an opportunity, feel free to reach out — I’m always open to new connections. I’m particularly interested in discussing ideas, collaborations, and opportunities to apply my skills in real-world contexts.</p>
         <div class="ref">References available upon request.</div>
       </div>
       <div class="contact-links">
         <a href="mailto:mattia.nesta@epfl.ch" class="contact-row"><span class="c-icon">Email</span><span class="c-value">mattia.nesta@epfl.ch</span><span class="c-arrow">→</span></a>
         <a href="tel:+41786490110" class="contact-row"><span class="c-icon">Phone</span><span class="c-value">+41 78 649 01 10</span><span class="c-arrow">→</span></a>
-        <a href="https://github.com/" target="_blank" class="contact-row"><span class="c-icon">Github</span><span class="c-value">github.com/yourname</span><span class="c-arrow">→</span></a>
-        <a href="https://linkedin.com/" target="_blank" class="contact-row"><span class="c-icon">Linked</span><span class="c-value">linkedin.com/in/yourname</span><span class="c-arrow">→</span></a>
+        <a href="https://github.com/nestama4real" target="_blank" class="contact-row"><span class="c-icon">Github</span><span class="c-value">github.com/nestama4real</span><span class="c-arrow">→</span></a>
+        <a href="https://linkedin.com/in/mattia-nesta" target="_blank" class="contact-row"><span class="c-icon">LinkedIn</span><span class="c-value">linkedin.com/in/mattia-nesta</span><span class="c-arrow">→</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<footer><p>© 2025 <span class="acc">Mattia Nesta</span> // Built with code & caffeine</p></footer>
-
 <div class="status-bar">
-  <span>System status: <span class="online">online</span></span>
+  <span>status: <span class="online">open to opportunities</span></span>
+  <span>© 2025 <span class="online">Mattia Nesta</span></span>
   <span>Lausanne // EPFL // BSc CS</span>
-  <span>Brutalist. Experimental. Unapologetic.</span>
 </div>
 
 <script>
